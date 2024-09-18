@@ -13,9 +13,6 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLogout = () => {
-    navigate('/login');
-  };
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -52,26 +49,28 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar-container">
-      <button
-        className={`sidebar-toggle ${isOpen ? 'open' : ''}`}
-        onClick={toggleSidebar}
-        style={{ top: buttonTop }}
-      >
-        {isOpen ? '✕' : '☰'}
-      </button>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <ul>
-          <li><Link to="/inicio">Inicio</Link></li>
-          <li><Link to="/prestamos">Préstamos</Link></li>
-          <li><Link to="/Transferencias">Transferencias</Link></li>
-          <li><Link to="/cuentas">Cuentas</Link></li>
-          <li><Link to="/tarjetas">Tarjetas</Link></li>
-          <li><Link to="/convertidor">Conversor de moneda</Link></li>
-          <li><Link to="/helpcenter">Centro de ayuda</Link></li>
-          <li><Link to="/">Cerrar Sesión</Link></li>
-        </ul>
+        <button
+          className={`sidebar-toggle ${isOpen ? 'open' :''}`}
+          onClick={toggleSidebar}
+          style={{ top: buttonTop }}
+        >
+          {isOpen ? '✕' : '☰'}
+        </button>
+
+        <div className={`sidebar ${isOpen ? 'open' :''}`}>
+            <ul>
+              <li><Link to="/inicio">Inicio</Link></li>
+              <li><Link to="/prestamos">Préstamos</Link></li>
+              <li><Link to="/Transferencias">Transferencias</Link></li>
+              <li><Link to="/cuentas">Cuentas</Link></li>
+              <li><Link to="/tarjetas">Tarjetas</Link></li>
+              <li><Link to="/convertidor">Conversor de moneda</Link></li>
+              <li><Link to="/helpcenter">Centro de ayuda</Link></li>
+              <li><Link to="/">Cerrar Sesión</Link></li>
+            </ul>
+            </div>
+
       </div>
-    </div>
   );
 };
 
